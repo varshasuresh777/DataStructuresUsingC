@@ -1,0 +1,29 @@
+initialize(stack)
+
+while not end of the postfix string:
+    next token= get the next token from postfix string
+	if next_token is an operand then 
+	push(stack,next token)
+    else if next_token is an operator then 
+	operand1 = pop(stack)
+	operand2 = pop(stack)
+	result = operate(operand2,operand1, next_token)
+	push(stack,result)
+	
+	end if
+end while 
+
+print pop(stack)
+
+
+
+example:
+75+34-*
+pushed 6 and 7 ,, found an operator , now pop the operands
+operand 1 is 7 
+operand 2 is 6
+save the result 
+now push 3 and 4
+now the operator is - 
+pop 3 and 4
+then next operation 
